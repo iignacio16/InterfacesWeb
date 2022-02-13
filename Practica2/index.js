@@ -1,5 +1,5 @@
 const input = document.getElementById("buscador");
-const boton = document.getElementById("boton");
+const buttonSearch = document.getElementById("buttonSearch");
 
 const search  = async (value) => {
     const data = await (await fetch(`https://rickandmortyapi.com/api/character/?name=${value}`)).json();
@@ -19,7 +19,7 @@ const search  = async (value) => {
     document.getElementById("characters").innerHTML = html;
 }
 
-boton.addEventListener("click", (e)=>{
+buttonSearch.addEventListener("click", (e)=>{
     e.preventDefault();
     if(input.value){
         search(input.value);
